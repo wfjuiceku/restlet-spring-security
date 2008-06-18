@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:ivy="antlib:org.apache.ivy.ant" default="build" basedir=".">
+
+	<property name="src.dir" location="src"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="classes.dir" location="classes"/>
+
+	<path id="compile.cp">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="run.cp">
+		<pathelement path="${classes.dir}"/>
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+
+	<target name="clean" description="Clean Project">
+		<delete dir="${classes.dir}"/>
+	</target>
+
+	<target name="build" depends="clean" description="Build Project">
+		<mkdir dir="${classes.dir}"/>
+		<javac destdir="${classes.dir}" srcdir="${src.dir}" classpathref="compile.cp" debug="true" encoding="UTF-8"/>
+
+		<copy file="${src.dir}/META-INF/applicationContextHttp.xml" todir="${classes.dir}/META-INF"/>
+		<copy file="${src.dir}/META-INF/applicationContextService.xml" todir="${classes.dir}/META-INF"/>
+
+	</target>
+
+	<target name="resolve" description="Retrieve dependencies with ivy">
+		<ivy:retrieve/>
+	</target>
+
+	<target name="startServiceEx" description="Start Service Example">
+		<java classname="org.example.Server" fork="true">
+			<classpath refid="run.cp"/>
+			<arg value="-s"/>
+		</java>
+	</target>
+
+	<target name="startHttpEx" description="Start Http Example">
+		<java classname="org.example.Server" fork="true">
+			<classpath refid="run.cp"/>
+		</java>
+	</target>
+
+</project>

@@ -1,0 +1,79 @@
+<ivy-module version="2.0"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+	<info organisation="soft-industry" module="prydbay-api"/>
+	<dependencies>
+		<dependency org="commons-lang" name="commons-lang" rev="2.+"/>
+		<dependency org="xerces" name="xerces" rev="2.4.+"/>
+
+		<dependency org="org.restlet" name="org.restlet" rev="1.1-M3"/>
+		<dependency org="org.restlet" name="org.restlet.ext.spring" rev="1.1-M3">
+			<exclude org="org.springframework"/>
+		</dependency>
+
+		<dependency org="com.noelios.restlet" name="com.noelios.restlet.ext.jetty" rev="1.1-M3"/>
+		<dependency org="com.noelios.restlet" name="com.noelios.restlet.ext.net" rev="1.1-M3"/>
+
+		<dependency org="org.aspectj" name="aspectjrt" rev="1.6.+"/>
+		<dependency org="org.aspectj" name="aspectjweaver" rev="1.6.+"/>
+
+		<dependency org="org.springframework" name="spring-aop" rev="2.5.+">
+			<exclude org="commons-attributes"/>
+			<exclude org="com.jamonapi"/>
+			<exclude org="xerces"/>
+		</dependency>
+
+		<dependency org="org.springframework" name="spring-aspects" rev="2.5.+">
+			<exclude org="commons-attributes"/>
+			<exclude org="com.jamonapi"/>
+			<exclude org="xerces"/>
+			<exclude org="aspectj"/>
+		</dependency>
+
+		<dependency org="org.springframework" name="spring-agent" rev="2.5.+"/>
+
+		<dependency org="org.springframework" name="spring-mock" rev="2.0.+">
+			<exclude org="org.springframework.ldap"/>
+			<exclude org="org.apache.mina" name="*"/>
+			<exclude org="jdbm"/>
+			<exclude org="net.sf.ehcache"/>
+			<exclude org="org.aspectj"/>
+			<exclude org="javax.servlet"/>
+		</dependency>
+
+		<dependency org="org.springframework.security" name="spring-security-core" rev="2.0.+">
+			<artifact name="spring-security-core" ext="jar"/>
+			<exclude org="org.springframework"/>
+			<exclude org="org.springframework.ldap"/>
+			<exclude org="org.apache.mina" name="*"/>
+			<exclude org="jdbm"/>
+			<exclude org="net.sf.ehcache"/>
+			<exclude org="org.aspectj"/>
+			<exclude org="javax.servlet"/>
+		</dependency>
+
+		<dependency org="org.springframework.security" name="spring-security-core-tiger" rev="2.0.+">
+			<artifact name="spring-security-core-tiger" ext="jar"/>
+			<exclude org="org.springframework"/>
+			<exclude org="org.springframework.ldap"/>
+			<exclude org="org.apache.mina" name="*"/>
+			<exclude org="jdbm"/>
+			<exclude org="net.sf.ehcache"/>
+			<exclude org="org.aspectj"/>
+			<exclude org="javax.servlet"/>
+		</dependency>
+
+		<exclude org="org.slf4j"/>
+		<exclude org="ant"/>
+		<exclude org="jaxen"/>
+		<exclude org="junit"/>
+		<exclude org="xmlunit"/>
+		<exclude org="xml-apis"/>
+		<exclude org="javax.sql"/>
+		<exclude org="javax.xml.bind"/>
+		<exclude org="org.codehaus.groovy"/>
+		<exclude org="org.jruby"/>
+		<exclude org="org.apache.directory.server"/>
+	</dependencies>
+</ivy-module>

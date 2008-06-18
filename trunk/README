@@ -1,0 +1,19 @@
+Install Apache Ant 1.7 and Apache Ivy
+
+1. Unzip archive
+
+2. Go to extracted project directory
+
+3. type 
+	ant resolve
+	
+4. type
+	ant bulld
+	
+5. type 
+	ant startServiceEx 
+to start example with AOP based service security
+
+6. type 
+	ant 
+to start example with HTTP based security	
