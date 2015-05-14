@@ -1,0 +1,1 @@
+Project dedicated to provide Spring Security authorization/authentification features to Restlet framework.
